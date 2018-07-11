@@ -1,0 +1,25 @@
+﻿<Window x:Class="MarkdownSlider.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarkdownSlider"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" KeyDown="Window_KeyDown">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" x:Name="menu">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="Open_Clicked"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="_Template" x:Name="templateMenu">
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Help" Click="Help_Clicked"/>
+            </MenuItem>
+        </Menu>
+        <cefSharp:ChromiumWebBrowser x:Name="browser"></cefSharp:ChromiumWebBrowser>
+    </DockPanel>
+</Window>
