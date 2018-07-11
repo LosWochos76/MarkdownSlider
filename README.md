@@ -1,18 +1,18 @@
 # MarkdownSlider
 
-A tool like [Deckset](https://www.deckset.com/) or [Marp](https://yhatt.github.io/marp/) to create presentation with Markdown.
+A tool like [Deckset](https://www.deckset.com/) or [Marp](https://yhatt.github.io/marp/) to create 
+presentation slides with [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ---
 ## Why using Markdown?
 
-Due to my profession as a professor in computer science I create powerpoint slides a lot. It always bothered me that 
-the content was burried in some proprietary format. It is always difficult to continue to use the slide-content
+Due to my profession I create powerpoint slides a lot. It always bothered me that 
+the content was burried in some proprietary format. Hence, it is difficult to reuse the slide-content
 for other things like online ressources, books or handouts.
 
-Of course, you could use Latex with the Beamer-class but in my opinion the Latex commands pollute 
-the text pretty much. [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
-can be a good alternative. There are plenty of editors etc. to write Markdown. Unfortunately, it is not quite easy to
-create presentations with it and present them in a classroom. 
+Writing slides in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+can be a good alternative. There are plenty of editors to write Markdown. Unfortunately, it is not quite easy to
+create presentation slides with Markdown and present them in a classroom. 
 
 Marp could be a great tool but it does not provide a presentation mode, so it is quite useless for my use-case.
 On the other side Deckset is only available for Mac.
