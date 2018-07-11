@@ -96,8 +96,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="FileHandler.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Slide.cs" />
     <Compile Include="SlideHandler.cs" />
+    <Compile Include="Slider.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="TemplateLoader.cs" />
     <Page Include="MainWindow.xaml">

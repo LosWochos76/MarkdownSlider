@@ -28,7 +28,7 @@ inserted into a template file. Such templates can be created individually by usi
 
 The result of that transformation is available via a local web-server using at 
 [uHttpSharp](https://github.com/Code-Sharp/uHttpSharp). Each slide can be loaded from a 
-specific URL, e.g. the first slide is available at [http://localhost:9876/slide0].
+specific URL, e.g. the first slide is available at ()[http://localhost:9876/slide0].
 
 Furthermore, MarkdownSlider embeds a Chromium browser by using [CefSharp](https://github.com/cefsharp/CefSharp) 
 to load each slide from the local web-server. Using keys like next, back or space one can flip 

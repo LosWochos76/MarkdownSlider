@@ -6,20 +6,42 @@
         xmlns:local="clr-namespace:MarkdownSlider"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" KeyDown="Window_KeyDown">
+        Title="MarkdownSlider" KeyDown="Window_KeyDown">
+    <Window.InputBindings>
+        <KeyBinding Key="Right" Command="{Binding NextSlideCommand}" />
+        <KeyBinding Key="Space" Command="{Binding NextSlideCommand}" />
+        <KeyBinding Key="Down" Command="{Binding NextSlideCommand}" />
+        <KeyBinding Key="BrowserForward" Command="{Binding NextSlideCommand}" />
+        <KeyBinding Key="Next" Command="{Binding NextSlideCommand}" />
+        <KeyBinding Key="Left" Command="{Binding LastSlideCommand}" />
+        <KeyBinding Key="Up" Command="{Binding LastSlideCommand}" />
+        <KeyBinding Key="PageUp" Command="{Binding LastSlideCommand}" />
+        <KeyBinding Key="BrowserBack" Command="{Binding LastSlideCommand}" />
+    </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top" x:Name="menu">
             <MenuItem Header="_File">
-                <MenuItem Header="_Open" Click="Open_Clicked"/>
+                <MenuItem Header="_Open local File" Click="Open_Clicked" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="_Reload" Click="Reload_Clicked" InputGestureText="Ctrl+R"/>
                 <Separator />
-                <MenuItem Header="_Exit" Click="MenuItem_Click" />
+                <MenuItem Header="_Exit" Click="Exit_Clicked" />
             </MenuItem>
-            <MenuItem Header="_Template" x:Name="templateMenu">
+            <MenuItem Header="_Controls">
+                <MenuItem Header="_Next Slide" Command="{Binding NextSlideCommand}" InputGestureText="Left" />
+                <MenuItem Header="_Last Slide" Command="{Binding LastSlideCommand}" InputGestureText="Right" />
+                <MenuItem Header="_Fullscreen" Click="F11_Clicked" InputGestureText="F11" />
+            </MenuItem>
+            <MenuItem Header="_Template" x:Name="templateMenu" ItemsSource="{Binding TemplateMenuItems}">
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="_Help" Click="Help_Clicked"/>
             </MenuItem>
         </Menu>
-        <cefSharp:ChromiumWebBrowser x:Name="browser"></cefSharp:ChromiumWebBrowser>
+        <StatusBar DockPanel.Dock="Bottom" x:Name="statusBar">
+            <StatusBarItem>
+                <TextBlock Text="{Binding Status}" />
+            </StatusBarItem>
+        </StatusBar>
+        <cefSharp:ChromiumWebBrowser Address="{Binding Url}" x:Name="browser" IsEnabled="False"></cefSharp:ChromiumWebBrowser>
     </DockPanel>
 </Window>

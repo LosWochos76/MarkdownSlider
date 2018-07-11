@@ -3,21 +3,21 @@ using System.IO;
 
 namespace MarkdownSlider
 {
-    class TemplateLoader
+    public class TemplateLoader
     {
-        private List<Template> templates = new List<Template>();
-
-        public List<Template> Load()
+        public static List<Template> Load()
         {
+            var templates = new List<Template>();
             var currentPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            TryLoad(Path.Combine(currentPath, "Templates"));
-            TryLoad(Path.Combine(currentPath, "..\\..\\..\\Templates"));
-            TryLoad(Path.Combine(currentPath, "..\\..\\..\\..\\Templates"));
+
+            TryLoad(Path.Combine(currentPath, "Templates"), templates);
+            TryLoad(Path.Combine(currentPath, "..\\..\\..\\Templates"), templates);
+            TryLoad(Path.Combine(currentPath, "..\\..\\..\\..\\Templates"), templates);
 
             return templates;
         }
 
-        private void TryLoad(string path)
+        private static void TryLoad(string path, List<Template> list)
         {
             if (!Directory.Exists(path))
                 return;
@@ -26,7 +26,7 @@ namespace MarkdownSlider
             {
                 var di = new DirectoryInfo(dir);
                 var t = new Template(di.Name, di.FullName);
-                templates.Add(t);
+                list.Add(t);
             }
         }
     }

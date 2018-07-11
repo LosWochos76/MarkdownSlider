@@ -21,7 +21,7 @@ namespace MarkdownSlider
                 var slide = Slides[slide_number];
                 var html = Template.Fill(slide);
 
-                context.Response = new HttpResponse("text/html", GenerateStreamFromString(html), false);
+                context.Response = new HttpResponse("text/html", GenerateStreamFromString(html), true);
             }
             else
             {
